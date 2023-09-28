@@ -55,4 +55,8 @@ public class Adventure {
             return "You cannot go that way. Please choose another path.";
         }
     }
+
+    public String getCurrentRoomDescription(){
+        return currentRoom.getRoomDescription();
+    }
 }
