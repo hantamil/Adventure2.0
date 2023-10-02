@@ -1,8 +1,26 @@
 import java.util.ArrayList;
 
 public class Item {
+    private String itemName;
+    private String itemDescription;
 
-    private ArrayList<String> itemList;
+    public Item(String itemName, String itemDescription) {
+        this.itemName = itemName;
+        this.itemDescription = itemDescription;
+    }
+
+    public String getItemName() {
+        return itemName;
+    }
+
+    public String getItemDescription() {
+        return itemDescription;
+    }
+
+
+
+
+    /*private ArrayList<String> itemList;
 
     public Item() {
         itemList = new ArrayList<>();
@@ -33,5 +51,5 @@ public class Item {
             return itemList;
         }
 
-    }
+    }*/
 }

@@ -1,6 +1,5 @@
 public class Map {
     public Room currentRoom;
-    Room
 
     public void buildMap() {
         Room room1 = new Room("Campsite", "get a bag and go on");
@@ -17,7 +16,7 @@ public class Map {
 
         room1.setEast(room2);
         room1.setSouth(room4);
-        room1.getItem().addItem("Satchel", "blabla");
+        room1.addItem("Satchel", "blabla");
 
         room2.setEast(room3);
         room2.setWest(room1);

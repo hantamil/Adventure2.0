@@ -1,15 +1,30 @@
+import java.util.ArrayList;
+
 public class Player {
     private Room currentRoom;
-    private Item inventory;
+    private ArrayList<Item> inventory;
 
    public Player(Room currentRoom){
        this.currentRoom = currentRoom;
-       inventory = new Item();
+       inventory = new ArrayList<>();
    }
 
-   public Item getInventory(){
+   public ArrayList<Item> getInventory(){
        return inventory;
    }
+
+   public void takeItem(Item item){
+       inventory.add(item);
+   }
+
+    /*public boolean takeItem(String itemName){
+        Item takeFromRoom = currentRoom.removeItem(itemName);
+        if (takeFromRoom != null){
+            inventory.add(takeFromRoom);
+            return true;
+        }
+        return false;
+    }*/
 
     public void setCurrentRoom(Room currentRoom){
         this.currentRoom = currentRoom;
@@ -43,36 +58,6 @@ public class Player {
             return "You have chosen a path that leads nowhere. Try a different path.";
         }
     }
-
-   /* public boolean move(String direction) {
-        switch (direction) {
-            case "n", "north": {
-                if (currentRoom.getNorth() != null) {
-                    return true;
-                }
-                break;
-            }
-            case "s", "south": {
-                if (currentRoom.getSouth() != null) {
-                    return true;
-                }
-                break;
-            }
-            case "e", "east": {
-                if (currentRoom.getEast() != null) {
-                    return true;
-                }
-                break;
-            }
-            case "w", "west": {
-                if (currentRoom.getWest() != null) {
-                    return true;
-                }
-                break;
-            }
-        }
-        return false;
-    }*/
 }
 
 

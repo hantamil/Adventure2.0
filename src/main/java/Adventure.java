@@ -18,4 +18,8 @@ public class Adventure {
     public String move(String direction){
         return player.move(direction);
     }
+
+   /* public boolean takeItem(String itemName){
+        return player.takeItem(itemName);
+    }*/
 }
