@@ -1,10 +1,11 @@
 public class Room {
-    private String name;
-    private String description;
+    private final String name;
+    private final String description;
     private Room north;
     private Room south;
     private Room east;
     private Room west;
+    //private Item item;
 
     public Room(String name, String description) {
         this.name = name;
@@ -13,14 +14,14 @@ public class Room {
         this.south = null;
         this.east = null;
         this.west = null;
-    }
-
-    public String getName () {
-        return name;
+        //item = new Item();
     }
 
     public String getRoomDescription () {
-        return name + "\n" + description;
+        final String WHITE_BOLD = "\033[1;97m";
+        final String RESET_BOLD = "\033[0m";
+        String formattedName = WHITE_BOLD + name + RESET_BOLD;
+        return formattedName + "\n" + description;
     }
 
     public Room getNorth () {
