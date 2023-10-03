@@ -18,6 +18,7 @@ public class Room {
         this.west = null;
         itemList = new ArrayList<>();
     }
+   //private final ArrayList<Item> itemInRoom = new ArrayList<>(5);
 
     public String getRoomDescription() {
         final String WHITE_BOLD = "\033[1;97m";
@@ -26,9 +27,10 @@ public class Room {
         return formattedName + "\n" + description;
     }
 
-    public void addItem(Item item) {
-        itemList.add(item);
-    }
+
+    //public void addItemToRoom(String additem) {
+   //     itemInRoom.add(addItem);
+   // }
 
     public Room getNorth() {
         return north;
@@ -62,7 +64,10 @@ public class Room {
         this.west = room;
     }
 
-    public String addItem(String itemName, String itemDescription) {
-        return itemName + itemDescription;
+    @Override
+    public String toString(){
+        return
+                "You have now step into" + " "+ name + " "
+                        + description + " " + "\n";
     }
 }

@@ -2,21 +2,22 @@ public class Map {
     public Room currentRoom;
 
     public void buildMap() {
-        Room room1 = new Room("Campsite", "get a bag and go on");
-        Room room2 = new Room("The Meadow", "you're in room2");
-        Room room3 = new Room("Lake Blabla", "go fishing");
-        Room room4 = new Room("The North Forrest", "4 for forrest");
+        Room room1 = new Room("The Campsite : The games starts in the woods.", "Where you need to survive to win.");
+        Room room2 = new Room("The medow.","The medow is dark and there is no lifestock just a dark thick fog.");
+        Room room3 = new Room("a lake,", "where it is dark and the water is a nasty green colour.");
+        Room room4 = new Room("the north forrest,", "where all the trees have died as well as dark shadows and limbs acroos the path.");
         Room room5 = new Room("Ilse of Sorrow", "5 and now you're in a hive");
-        Room room6 = new Room("The Abandoned Barn", "6 this is where you get your fix");
-        Room room7 = new Room("The South Forrest", "7 is for heaven");
-        Room room8 = new Room("Main Square, Arith", "fight or buy your way to somethingsomething");
-        Room room9 = new Room("Woodworker", "9 you did devine!");
+        Room room6 = new Room("The Abandoned Barn", "where there is humans remains every where and blod.");
+        Room room7 = new Room("south forrest", "where you can see the exit but there are monsters guarding the exit");
+        Room room8 = new Room("a place right by the exit","where the monsters village is and there can you see humans trap in a prison");
+        Room room9 = new Room("the adventure towns main street", "the main street are filled with shops.");
 
         currentRoom = room1;
 
         room1.setEast(room2);
         room1.setSouth(room4);
-        room1.addItem("Satchel", "blabla");
+
+        //room1.addItems(item1);
 
         room2.setEast(room3);
         room2.setWest(room1);

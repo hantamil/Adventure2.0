@@ -2,47 +2,66 @@ import java.util.Scanner;
 
 public class UserInterface {
 
-    public void startProgram() {
+    private Adventure adventure;
+
+    public UserInterface() {
+        adventure = new Adventure();
+        adventure.buildMap();
+    }
+
+    public void startGame() {
         Adventure adventure = new Adventure();
         Scanner keyboard = new Scanner(System.in);
 
-        System.out.println("Welcome to the ADVENTURE GAME\nI hope you're ready for an adventure, brace yourself and lets get going!" +
-                "First of all the rules:\nYou can move in between rooms by writing 'go north', 'go south', 'go east' and 'go west'\n" +
-                "Write 'look' if you want a description of your surroundings, 'take' to pick up an item on your journey and 'exit' if you want to stop playing.\n" +
-                "If you are ever in need of guidance simply write 'help'.\n" +
+        System.out.println("Welcome to the ADVENTURE GAME\nI hope you are ready for an adventure, brace yourself and lets get going!\n" +
+                "If you need help simply type 'help'.\n" +
                 "Press 'Enter' to start playing.");
 
         keyboard.nextLine();
         adventure.buildMap();
         System.out.println(adventure.getCurrentRoomDescription());
+        System.out.println("Where do you want to go next?");
 
 
         while (true) {
             String input = keyboard.nextLine();
 
-            if (input.equalsIgnoreCase("exit")) {
-                System.out.println("Thanks for playing! Goodbye.");
-                break;
+            switch (input.toLowerCase()) {
+
+                case "exit":
+                    if (input.equalsIgnoreCase("exit")) {
+                        System.out.println("Thanks for playing! Goodbye.");
+                        return;
+                    }
+
+                case "help":
+                case "h":
+                    System.out.println("You can move in between rooms by writing 'go north', 'go south', 'go east' and 'go west'\n" +
+                            "Hint: not all rooms are connected! Maybe try a different direction." +
+                            "Write 'exit' if you want to stop playing, \n" +
+                            "Type 'look' if you want a description of your surroundings and 'take' to pick up an item on your journey.");
+                    break;
+
+                case "look":
+                    case  "l":
+                    System.out.println(adventure.toString().toLowerCase());
+                    System.out.println(" You are in the following room:" + " " + adventure.getCurrentRoomDescription());
+                    break;
+
+                default:
+                    if (input.startsWith("go")) {
+                        String direction = input.substring(3);
+                        String result = adventure.move(direction);
+                        if (result != null) {
+                            System.out.println(result);
+                        }
+                    } else {
+                        System.out.println("Unknown command. Type 'help' for commands.");
+                        keyboard.nextLine();
+                    }
+                    break;
             }
-            else if (input.equalsIgnoreCase("help")) {
-                System.out.println("You can move in between rooms by writing 'go north', 'go south', 'go east' and 'go west'\n" +
-                        "Hint: not all rooms are connected! Maybe try a different direction." +
-                        "Write 'exit' if you want to stop playing, 'look' if you want a description of your surroundings and 'take' to pick up an item on your journey.");
-            }
-            else if (input.equalsIgnoreCase("look")) {
-                System.out.println(adventure.getCurrentRoomDescription());
-            }
-            else if (input.startsWith("go ")) {
-                String direction = input.substring(3);
-                String result = adventure.move(direction);
-                if (result !=null){
-                    System.out.println(result);
-                }
-            }
-            else {
-                System.out.println("Unknown command. Type 'help' for commands.");
-                keyboard.nextLine();
-            }
+            System.out.println("Where do you want to go next?");
         }
     }
 }

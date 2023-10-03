@@ -1,7 +1,9 @@
 import java.util.ArrayList;
+import java.util.List;
 
 public class Item {
     private String itemName;
+
     private String itemDescription;
 
     public Item(String itemName, String itemDescription) {
@@ -20,7 +22,7 @@ public class Item {
 
 
 
-    /*private ArrayList<String> itemList;
+    /*  private ArrayList<String> itemList;
 
     public Item() {
         itemList = new ArrayList<>();
