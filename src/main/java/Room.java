@@ -7,7 +7,7 @@ public class Room {
     private Room south;
     private Room east;
     private Room west;
-    private ArrayList<Item> itemList;
+    private ArrayList<Item> items = new ArrayList<>();
 
     public Room(String name, String description) {
         this.name = name;
@@ -16,21 +16,16 @@ public class Room {
         this.south = null;
         this.east = null;
         this.west = null;
-        itemList = new ArrayList<>();
+
     }
-   //private final ArrayList<Item> itemInRoom = new ArrayList<>(5);
 
     public String getRoomDescription() {
         final String WHITE_BOLD = "\033[1;97m";
         final String RESET_BOLD = "\033[0m";
         String formattedName = WHITE_BOLD + name + RESET_BOLD;
-        return formattedName + "\n" + description;
+        return formattedName + "\n" + description + "\n" + "The room items are: " + items;
     }
 
-
-    //public void addItemToRoom(String additem) {
-   //     itemInRoom.add(addItem);
-   // }
 
     public Room getNorth() {
         return north;
@@ -64,10 +59,46 @@ public class Room {
         this.west = room;
     }
 
+    public void addItem(Item item){
+        items.add(item);
+    }
+
+    public void removeItem (String itemName){
+        items.remove(items);
+
+        for (int i = 0; i < items.size() ; i++) {
+            if(items.get(i).getItemName().equals(itemName)){
+                items.remove(items.get(i));
+            }
+        }
+
+
+    }
+
+
     @Override
-    public String toString(){
+    public String toString() {
         return
-                "You have now step into" + " "+ name + " "
+                "You have now step into" + " " + name + " "
                         + description + " " + "\n";
     }
+
+
 }
+
+    /*
+
+
+
+    public void removeItem (Item items){
+        itemList.remove(items);
+    }
+
+
+    public ArrayList<Item> getItemList() {
+        return itemList;
+    }
+
+
+}
+*/

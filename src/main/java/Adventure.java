@@ -19,7 +19,8 @@ public class Adventure {
         return player.move(direction);
     }
 
-   /* public boolean takeItem(String itemName){
-        return player.takeItem(itemName);
-    }*/
+
+
+
+
 }

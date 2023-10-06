@@ -1,45 +1,33 @@
 import java.util.ArrayList;
+import java.util.Scanner;
 
 public class Player {
 
     private Room currentRoom;
 
-    private ArrayList<Item> inventory;
+    private Item inventory;
 
-   public Player(Room currentRoom){
-       this.currentRoom = currentRoom;
-       inventory = new ArrayList<>();
-   }
 
-   public ArrayList<Item> getInventory(){
-       return inventory;
-   }
+    Scanner keyboard = new Scanner(System.in);
 
-   public void takeItem(Item item){
-       inventory.add(item);
-   }
-   /*
-    public boolean takeItem(String itemName){
-        Item takeFromRoom = currentRoom.removeItem(itemName);
-        if (takeFromRoom != null){
-            inventory.add(takeFromRoom);
-            return true;
-        }
-        return false;
+
+    public Player(Room currentRoom){
+        this.currentRoom = currentRoom;
     }
- */
+
+
 
     public String move(String direction) {
         Room nextRoom = null;
         switch (direction) {
             case "n":
             case"north":
-                case"go north":
+            case"go north":
                 nextRoom = currentRoom.getNorth();
                 break;
             case "s":
             case"south":
-                case"go south":
+            case"go south":
                 nextRoom = currentRoom.getSouth();
                 break;
             case "e":
@@ -61,6 +49,7 @@ public class Player {
         }
     }
 
+
     public void setCurrentRoom(Room currentRoom){
         this.currentRoom = currentRoom;
     }
@@ -68,6 +57,20 @@ public class Player {
     public String getCurrentRoomDescription(){
         return currentRoom.getRoomDescription();
     }
+
+    ArrayList<Item> Inventory = new ArrayList<>();
+
+    public ArrayList<Item>ShowInventory(){
+        return Inventory;
+    }
+
+    public void removeFrominventory(Item item){
+
+    }
+    public Item getShowInventory(){
+        return inventory;
+    }
+
 }
 
 

@@ -20,10 +20,11 @@ public class UserInterface {
         keyboard.nextLine();
         adventure.buildMap();
         System.out.println(adventure.getCurrentRoomDescription());
-        System.out.println("Where do you want to go next?");
+
 
 
         while (true) {
+            System.out.println("\n" + "Where do you want to go next?");
             String input = keyboard.nextLine();
 
             switch (input.toLowerCase()) {
@@ -43,9 +44,27 @@ public class UserInterface {
                     break;
 
                 case "look":
-                    case  "l":
+                case  "l":
                     System.out.println(adventure.toString().toLowerCase());
                     System.out.println(" You are in the following room:" + " " + adventure.getCurrentRoomDescription());
+                    break;
+
+                case "drop":
+                    System.out.println("what do you wanna ad");
+                    String drop = keyboard.nextLine();
+                    for(Item Items : adventure.map.getCurrentRoom().removeItem();)
+                    if(drop.equalsIgnoreCase(drop)){
+                        adventure.map.currentRoom.removeItem(drop);
+                        System.out.println("Item has been dropped" + drop + "in the room)");
+                    }
+                    break;
+
+                case "take":
+                    System.out.println("What item do you want to take with you?");
+                    String take = keyboard.nextLine();
+                    if(adventure.map.getCurrentRoom().removeItem(take);
+                    if()
+
                     break;
 
                 default:
@@ -61,7 +80,6 @@ public class UserInterface {
                     }
                     break;
             }
-            System.out.println("Where do you want to go next?");
         }
     }
 }

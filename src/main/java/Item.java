@@ -2,6 +2,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Item {
+
     private String itemName;
 
     private String itemDescription;
@@ -11,6 +12,9 @@ public class Item {
         this.itemDescription = itemDescription;
     }
 
+    public Item(String itemName){
+        this.itemName = itemName;
+    }
     public String getItemName() {
         return itemName;
     }
@@ -20,38 +24,23 @@ public class Item {
     }
 
 
-
-
-    /*  private ArrayList<String> itemList;
-
-    public Item() {
-        itemList = new ArrayList<>();
+    public void setItemDescription(String itemDescription ){
+        this.itemDescription = itemDescription;
     }
 
-    public class Items {
-        private String itemName;
-        private String itemDescription;
 
-        public Items(String itemName, String itemDescription) {
-            this.itemName = itemName;
-            this.itemDescription = itemDescription;
-        }
+    public void setItemNamen(String itemName){
+        this.itemName = itemName;
+    }
 
-        public String getItemName() {
-            return itemName;
-        }
+@Override
+    public String toString() {
+        return
+                itemName + " "
+                        + itemDescription + " " + "\n";
+    }
 
-        public String getItemDescription() {
-            return itemDescription;
-        }
 
-        public void addItem(Item.Items items){
-            addItem(items);
-        }
 
-        public ArrayList<Items> getItem(){
-            return itemList;
-        }
 
-    }*/
 }
