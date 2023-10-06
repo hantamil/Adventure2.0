@@ -52,7 +52,7 @@ public class UserInterface {
                 case "drop":
                     System.out.println("what do you wanna ad");
                     String drop = keyboard.nextLine();
-                    for(Item Items : adventure.map.getCurrentRoom().removeItem();)
+                    for(Item Items : adventure.map.getCurrentRoom().)
                     if(drop.equalsIgnoreCase(drop)){
                         adventure.map.currentRoom.removeItem(drop);
                         System.out.println("Item has been dropped" + drop + "in the room)");
@@ -64,7 +64,6 @@ public class UserInterface {
                     String take = keyboard.nextLine();
                     if(adventure.map.getCurrentRoom().removeItem(take);
                     if()
-
                     break;
 
                 default:

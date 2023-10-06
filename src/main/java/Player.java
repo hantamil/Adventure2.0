@@ -50,6 +50,12 @@ public class Player {
     }
 
 
+    public void dropItem(String dropItem){
+        Item dropItemToRoom = null;
+        for(Item item : inventory){
+            if(item.getItemName().toLowerCase().contains(dropItem.toLowerCase()))
+        }
+    }
     public void setCurrentRoom(Room currentRoom){
         this.currentRoom = currentRoom;
     }
@@ -64,12 +70,7 @@ public class Player {
         return Inventory;
     }
 
-    public void removeFrominventory(Item item){
 
-    }
-    public Item getShowInventory(){
-        return inventory;
-    }
 
 }
 
