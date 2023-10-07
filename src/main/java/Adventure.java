@@ -23,6 +23,11 @@ public class Adventure {
         return player.takeItem(itemName);
  }
 
+ //public void dropItem(String itemName){
+//       return player.dropItem(String itemName);
+ //}
+
+
 
 
 }
