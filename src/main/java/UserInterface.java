@@ -50,20 +50,11 @@ public class UserInterface {
                     break;
 
                 case "drop":
-                    System.out.println("what do you wanna ad");
-                    String drop = keyboard.nextLine();
-                    for(Item Items : adventure.map.getCurrentRoom().)
-                    if(drop.equalsIgnoreCase(drop)){
-                        adventure.map.currentRoom.removeItem(drop);
-                        System.out.println("Item has been dropped" + drop + "in the room)");
-                    }
+                    System.out.println("what do you want to drop?");
                     break;
 
                 case "take":
                     System.out.println("What item do you want to take with you?");
-                    String take = keyboard.nextLine();
-                    if(adventure.map.getCurrentRoom().removeItem(take);
-                    if()
                     break;
 
                 default:
