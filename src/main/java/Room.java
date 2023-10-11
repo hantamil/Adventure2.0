@@ -7,7 +7,7 @@ public class Room {
     private Room south;
     private Room east;
     private Room west;
-    private ArrayList<Item> itemList;
+    public ArrayList<Item> itemList;
 
     public Room(String name, String description) {
         this.name = name;
@@ -24,10 +24,6 @@ public class Room {
         final String RESET_BOLD = "\033[0m";
         String formattedName = WHITE_BOLD + name + RESET_BOLD;
         return formattedName + "\n" + description;
-    }
-
-    public void addItem(Item item) {
-        itemList.add(item);
     }
 
     public Room getNorth() {
@@ -62,7 +58,16 @@ public class Room {
         this.west = room;
     }
 
-    public String addItem(String itemName, String itemDescription) {
-        return itemName + itemDescription;
+    public void addItem(Item item) {
+        itemList.add(item);
+    }
+
+    public Item removeItem(String item) {
+        itemList.remove(item);
+        return null;
+    }
+
+    public ArrayList<Item> getItemList(){
+        return itemList;
     }
 }

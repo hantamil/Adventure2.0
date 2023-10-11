@@ -6,7 +6,7 @@ public class UserInterface {
         Adventure adventure = new Adventure();
         Scanner keyboard = new Scanner(System.in);
 
-        System.out.println("Welcome to the ADVENTURE GAME\nI hope you're ready for an adventure, brace yourself and lets get going!" +
+        System.out.println("The Story of a Warlock: Ghouls & Gemstones\nI hope you're ready for an adventure, brace yourself and lets get going!" +
                 "First of all the rules:\nYou can move in between rooms by writing 'go north', 'go south', 'go east' and 'go west'\n" +
                 "Write 'look' if you want a description of your surroundings, 'take' to pick up an item on your journey and 'exit' if you want to stop playing.\n" +
                 "If you are ever in need of guidance simply write 'help'.\n" +
