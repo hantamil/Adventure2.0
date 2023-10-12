@@ -1,6 +1,7 @@
 import java.util.ArrayList;
 
 public class Player {
+    public Enemy getCurrentWeapon;
     private Room currentRoom;
     private ArrayList<Item> inventory;
     private int health;
@@ -11,6 +12,10 @@ public class Player {
        this.currentRoom = currentRoom;
        this.inventory = new ArrayList<>();
        this.health = 100;
+    }
+
+    public Room getCurrentRoom(){
+        return currentRoom;
     }
 
     public void setCurrentRoom(Room currentRoom) {
@@ -140,8 +145,32 @@ public class Player {
         } else if (eatItem == null) {
             return FoodEnum.NOT_FOUND;
         } else {
-            return FoodEnum.NO_FOOD;
+            return FoodEnum.NOT_FOOD;
         }
+    }
+
+    public AttackEnum attack(Enemy enemy) {
+        Attack attack = new Attack(this);
+        return attack.attack(enemy);
+    }
+
+    public WeaponEnum equipWeapon(String weaponName) {
+        Weapon weapon = findWeapon(weaponName);
+        if (weapon != null) {
+            this.currentWeapon = weapon;
+            return WeaponEnum.WEAPON_EQUIPPED;
+        } else {
+            return WeaponEnum.WEAPON_NOT_FOUND;
+        }
+    }
+
+    private Weapon findWeapon(String weaponName) {
+        for (Item item : inventory) {
+            if (item instanceof Weapon && item.getItemName().equalsIgnoreCase(weaponName)) {
+                return (Weapon) item;
+            }
+        }
+        return null;
     }
 
 }

@@ -1,3 +1,5 @@
+import java.util.List;
+
 public class Adventure {
     Map map = new Map();
     Player player;
@@ -43,4 +45,30 @@ public class Adventure {
     public FoodEnum eatFood(String food) {
         return player.eatFood(food);
     }
+
+    public AttackEnum attack(Enemy enemy) {
+        return player.attack(enemy);
+    }
+
+    private WeaponEnum equipWeapon(String weaponName) {
+        return player.equipWeapon(weaponName);
+    }
+
+    public AttackEnum playerAttack(Enemy enemy) {
+        return attack(enemy);
+    }
+
+    public WeaponEnum playerEquipWeapon(String weaponName) {
+        return equipWeapon(weaponName);
+    }
+
+    public String getEnemyDescription(Enemy enemy) {
+        return enemy.getEnemyDescription();
+    }
+
+    public Player getPlayer(){
+        return player;
+    }
+
+
 }

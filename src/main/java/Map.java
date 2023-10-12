@@ -8,7 +8,7 @@ public class Map {
         Room room4 = new Room("The Northern Forrest", "lots of ghouls, gem, mostly fight");
         Room room5 = new Room("Isle of Sorrow", "fight like 5 ghouls and drop all gemstones somewhere and the sun shines and all is good");
         Room room6 = new Room("The gates of Arith", "watch out for thieves, dont loose your bag if /go east to sleep with singing gypsies, /go west overhear somebody saying dont stay here after nighttime and strongly suggest one to go through the gates before they close it for the night");
-        Room room7 = new Room("The Southern Forrest", "some ghouls, gem if go keep heading west and seek indside a tree, food like nuts and berries");
+        Room room7 = new Room("The Southern Forrest", "some ghouls, gem if go keep heading west and seek inside a tree, food like nuts and berries");
         Room room8 = new Room("Main Square, Arith", "food bread and stew, /go south kill spell, /go east gemstone");
         Room room9 = new Room("The Harbour, Arith", "somehow get a boat");
 
